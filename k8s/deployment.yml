@@ -26,17 +26,13 @@ spec:
             exec:
               command: [ "sh", "-c", "sleep 5" ]
         ports:
-          - containerPort: 9001
+          - containerPort: "9000"
         env:
-          - name: BPL_JVM_THREAD_COUNT
-            value: "50"
           - name: SPRING_DATA_REDIS_HOST
-            value: http://polar-redis
-          - name: SPRING_DATA_REDIS_PORT
-            value: 6379
+            value: polar-redis
           - name: CATALOG-SERVICE_URL
-            value: http://catalog-service:9001
+            value: http://catalog-service
           - name: ORDER-SERVICE_URL
-            value: http://order-service:9002
+            value: http://order-service
           - name: SPRING_CLOUD_CONFIG_URI
-            value: http://config-service:80
+            value: http://config-service
